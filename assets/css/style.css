@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html, body{
+  scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    background-color: #010001;
+    color: #fff;
+}
+.container-fuild{
+    height: 100vh;
+    overflow-x: hidden;
+    perspective: 20px;
+}
+.banner{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+}
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/bg-orange.jpg);
+    background-size: cover;
+    background-position: center;
+    transform: translateZ(-10px) scale(1.);
+}
+.bg::before{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    content: '';
+    background-image: linear-gradient(
+        to top, #010001, transparent
+    );
+    bottom: 0;
+}
+.content{
+    font-size: xxx-large;
+    transform: translateZ(10px)
+}
+.container{
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 100px;
+}
+header{
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 1200px;
+    max-width: 100%;
+    padding: 40px 0;
+}
+
+
+header .logo{
+    font-size: xx-large;
+    transition: 0.3s ease;
+}
+
+.logo:hover{
+  color: #C40C0C;
+  text-shadow: 0 0 25px #C40C0C
+               0 0 25px #C40C0C;
+  transform: scale(1.03);
+}
+header .signin{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+header button{
+    background-color: #010001;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: end;
+}
+
+.signin a{
+    padding: 12px 17px;
+    font-size: 2rem;
+    font-family: 'Lobster', cursive;
+}
+
+.signin a:hover{
+    color: white;
+    padding: auto   ;
+    background-color: rgba(24, 18, 18, 0.171);
+    backdrop-filter: blur(10px);
+    border-radius: 8rem;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "poppins";
+    font-weight: 700;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+a:hover{
+
+    color: white;
+    padding: auto   ;
+    background-color: rgba(236, 95, 1, 0.733);
+    backdrop-filter: blur(10px);
+    border-radius: 8rem;
+}
+
+
+nav ul li{
+    padding: 10px;
+}
+.library{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    margin-top: 100px;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+.library .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/bg-s3.png);
+    background-size: cover;
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: 0.3s;
+}
+.library .item:nth-child(2){
+    background-image: url(../img/hero-img.jpg);
+    transition-delay: 0.5s;
+}
+.library .item:nth-child(3){
+    background-image: url(../img/hero-img-3.jpg);
+    transition-delay: 0.7s;
+}
+.library .item:nth-child(4){
+    background-image: url(../img/hero-img-4.jpg);
+    transition-delay: 0.9s;
+}
+.des{
+    width: 70%;
+    text-align: center;
+    margin: 100px auto;
+    transition: 0.5s;
+    transform: translateY(30px);
+    opacity: 0;
+}
+.library.active .item{
+    opacity: 1;
+}
+.des.active{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+.btn button {
+    position: relative;
+    padding: 12px 35px;
+    background: #fec195;
+    font-size: 17px;
+    font-weight: 500;
+    color: #181818;
+    border: 3px solid #fec195;
+    border-radius: 8px;
+    box-shadow: 0 0 0 #fec1958c;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .star-1 {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+  }
+  
+  .star-2 {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-3 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-4 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-5 {
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-6 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s ease;
+  }
+  
+  button:hover {
+    background: transparent;
+    color: #fec195;
+    box-shadow: 0 0 25px #fec1958c;
+  }
+  
+  button:hover .star-1 {
+    position: absolute;
+    top: -80%;
+    left: -30%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-2 {
+    position: absolute;
+    top: -25%;
+    left: 10%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-3 {
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-4 {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-5 {
+    position: absolute;
+    top: 25%;
+    left: 115%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-6 {
+    position: absolute;
+    top: 5%;
+    left: 60%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  .fil0 {
+    fill: #fffdef;
+  }
+  
